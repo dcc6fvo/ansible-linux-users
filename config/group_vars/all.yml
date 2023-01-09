@@ -1,0 +1,16 @@
+---
+ojs_dns: 'ojs.luzerna.ifc.edu.br'
+ojs_www_user: 'ojs_www_user'
+ojs_www_db: 'ojs_www_db'
+ojs_www_userpass: '12345'
+ojs_www_dbip: '192.168.1.73'
+ojs_version: '3.3.0-7'
+
+www_dir: '/var/www/public/'
+
+ssl_dir: '/etc/apache2/ssl'
+ssl_cert_file: 'luzerna.ifc.edu.br.crt'
+ssl_cert_key_file: 'luzerna.ifc.edu.br.key'
+ssl_chain_file: 'intermediate.crt'
+
+email_cti: 'cti.luzerna@ifc.edu.br'

@@ -1,0 +1,32 @@
+---    
+  - name: 'add user alice appeding sudo group'
+    ansible.builtin.user:
+      name: alice
+      shell: /bin/bash
+      groups: sudo
+      append: yes
+    
+  - name: 'add user bob appeding sudo group'
+    ansible.builtin.user:
+      name: bob
+      shell: /bin/bash
+      groups: sudo
+      append: yes
+
+  - name: 'remove user charlie'
+    ansible.builtin.user:
+      name: charlie
+      state: absent
+      remove: yes
+
+  - name: 'Set authorized key for user alice'
+    ansible.posix.authorized_key:
+      user: alice
+      state: present
+      key: "{{ lookup('file', '{{ role_path }}/files/authorized_keys-alice') }}"
+
+  - name: 'Set authorized key for user bob'
+    ansible.posix.authorized_key:
+      user: bob
+      state: present
+      key: "{{ lookup('file', '{{ role_path }}/files/authorized_keys-bob') }}"
